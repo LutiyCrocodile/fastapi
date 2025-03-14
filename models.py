@@ -1,7 +1,7 @@
 from pydantic import BaseModel, EmailStr, Field
 
-class UserCreate(BaseModel):
+class Product(BaseModel):
+    product_id: int = Field(ge=0)
     name: str
-    email: EmailStr
-    age: int = Field(gt=0, le=100)
-    is_subscribed: bool
+    category: str
+    price: float
